@@ -1,16 +1,34 @@
-name: "my-website"
+name: "Channel Islands WebCR"
 navbar:
-  title: "My Website"
+  title: "Channel Islands"
   left:
-    - text: "Index"
-      href: index.html
+    - text: "Deep Seafloor"
+      href: deep-seafloor.html
+    - text: "Kelp Forest"
+      href: kelp-forest.html
+    - text: "Pelagic"
+      href: pelagic.html
+    - text: "Rocky Shore"
+      href: rocky-shore.html
+    - text: "Sandy Beach"
+      href: sandy-beach.html
+    - text: "Sandy Seafloor"
+      href: sandy-seafloor.html
+  right:
     - text: "About"
-      href: about.html
+      href: https://marinebon.org/sanctuaries/
 output_dir: docs
 output:
   html_document:
+    theme:
+      version: 5
+      bootswatch: yeti
+      fg: '#003087'
+      bg: '#FFF'
     self_contained: false
     lib_dir: libs
     css: _styles.css
+    mathjax: null
     includes:
-      before_body: __navbar.html
+      before_body: _navbar-ioos.html   # IOOS menu
+      after_body: _navbar-update.html  # JavaScript to update menus
