@@ -1,6 +1,7 @@
-name: "Channel Islands WebCR"
+name: "Channel Islands Web Condition Report"
 navbar:
   title: "Channel Islands"
+  href: index.html
   left:
     - text: "Deep Seafloor"
       href: deep-seafloor.html
@@ -21,14 +22,16 @@ output_dir: docs
 output:
   html_document:
     theme:
-      version: 5
+      version: 4
       bootswatch: yeti
+      # primary: '#013088'
+      # secondary: '#FFF'
       fg: '#003087'
       bg: '#FFF'
-    self_contained: false
+    css: libs/styles.css
     lib_dir: libs
-    css: _styles.css
+    self_contained: false
     mathjax: null
     includes:
-      before_body: _navbar-ioos.html   # IOOS menu
-      after_body: _navbar-update.html  # JavaScript to update menus
+      before_body: libs/before_body.html   # IOOS menu
+      after_body: libs/after_body.html  # JavaScript to update menus
