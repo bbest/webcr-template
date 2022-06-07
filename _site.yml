@@ -26,7 +26,7 @@ output:
       bootswatch: yeti
       # primary: '#013088'
       # secondary: '#FFF'
-      fg: '#003087'
+      fg: '#00467f'
       bg: '#FFF'
     css: libs/styles.css
     lib_dir: libs
