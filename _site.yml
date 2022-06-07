@@ -18,7 +18,7 @@ navbar:
   right:
     - text: "About"
       href: https://marinebon.org/sanctuaries/
-output_dir: docs
+output_dir: "."
 output:
   html_document:
     theme:
@@ -35,3 +35,4 @@ output:
     includes:
       before_body: libs/before_body.html   # IOOS menu
       after_body: libs/after_body.html  # JavaScript to update menus
+  
