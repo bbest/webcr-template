@@ -83,18 +83,17 @@ $(function() {
   
   // header scroll
   headerScroll = function() {
-    
-    100 > $(this).scrollTop() ? (
-      // if scrolled up [initial]
-      $("header > div").css("visibility", "visible"),
-      $(".navbar").css({ position: "static", top: "0" }),
-      $(".main-container").css("margin-top", "0px"),
-      $(".navbar").css("top", "100px")) : (
-      // if scrolled down [after]
-      $("header > div").css("visibility", "hidden"),
-      $(".navbar").css("position", "fixed"),
-      $(".main-container").css("margin-top", "100px"),
-      $(".navbar").css("top", "0px"))
+    nav_top = 97.5;
+    $(this).scrollTop() <= nav_top ? (
+      // initially scrolled up
+      $('header div').css('visibility', 'visible'),
+      $('.navbar').css({ position: 'fixed', top: nav_top })
+    ) : (
+      // scrolled down
+      $('.navbar').css({position: 'fixed', top: 0}),
+      $('header div').css('visibility', 'hidden')
+    )
+    $('header #headspace').height($('.navbar').outerHeight())
   },
   $(document).scroll(headerScroll),
   window.onresize = function(e) {

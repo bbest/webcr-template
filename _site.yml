@@ -1,6 +1,7 @@
 name: "Channel Islands Web Condition Report"
 navbar:
   title: "Channel Islands"
+  type: inverse
   href: index.html
   left:
     - text: "Deep Seafloor"
@@ -22,12 +23,10 @@ output_dir: "."
 output:
   html_document:
     theme:
-      version: 4
+      version: 5
       bootswatch: yeti
-      # primary: '#013088'
-      # secondary: '#FFF'
-      fg: '#00467f'
-      bg: '#FFF'
+      primary: '#00467f' # sanctuaries.noaa.gov navbar: darkblue=#00467f, teal=#008da8
+      secondary: '#FFF'
     css: libs/styles.css
     lib_dir: libs
     self_contained: false

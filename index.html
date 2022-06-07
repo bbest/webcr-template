@@ -16,8 +16,8 @@
 <script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-<link href="site_libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet" />
-<script src="site_libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script>
+<link href="site_libs/bootstrap-5.1.0/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-5.1.0/bootstrap.bundle.min.js"></script>
 <script src="site_libs/bs3compat-0.3.1/transition.js"></script>
 <script src="site_libs/bs3compat-0.3.1/tabs.js"></script>
 <script src="site_libs/bs3compat-0.3.1/bs3compat.js"></script>
@@ -226,7 +226,7 @@ $(document).ready(function () {
 
 
 
-<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+<div class="navbar navbar-inverse  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
@@ -275,8 +275,8 @@ $(document).ready(function () {
   gtag('config', 'G-TODOTODOT0');
 </script>
 <!-- IOOS.us style -->
-<header style="position: static; top: 0px;">
-  <div class="container-fluid" style="width: 100%">
+<header>
+  <div class="container-fluid">
     
     <div id="logo" class="text-center">
       <a href="https://ioos.us" style="visibility: visible;">
@@ -439,18 +439,17 @@ $(function() {
   
   // header scroll
   headerScroll = function() {
-    
-    100 > $(this).scrollTop() ? (
-      // if scrolled up [initial]
-      $("header > div").css("visibility", "visible"),
-      $(".navbar").css({ position: "static", top: "0" }),
-      $(".main-container").css("margin-top", "0px"),
-      $(".navbar").css("top", "100px")) : (
-      // if scrolled down [after]
-      $("header > div").css("visibility", "hidden"),
-      $(".navbar").css("position", "fixed"),
-      $(".main-container").css("margin-top", "100px"),
-      $(".navbar").css("top", "0px"))
+    nav_top = 97.5;
+    $(this).scrollTop() <= nav_top ? (
+      // initially scrolled up
+      $('header div').css('visibility', 'visible'),
+      $('.navbar').css({ position: 'fixed', top: nav_top })
+    ) : (
+      // scrolled down
+      $('.navbar').css({position: 'fixed', top: 0}),
+      $('header div').css('visibility', 'hidden')
+    )
+    $('header #headspace').height($('.navbar').outerHeight())
   },
   $(document).scroll(headerScroll),
   window.onresize = function(e) {
