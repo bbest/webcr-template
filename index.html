@@ -13,17 +13,17 @@
 
 <title>Home</title>
 
-<script src="libs/header-attrs-2.14/header-attrs.js"></script>
-<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet" />
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script>
-<script src="libs/bs3compat-0.3.1/transition.js"></script>
-<script src="libs/bs3compat-0.3.1/tabs.js"></script>
-<script src="libs/bs3compat-0.3.1/bs3compat.js"></script>
-<script src="libs/navigation-1.1/tabsets.js"></script>
-<link href="libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
-<script src="libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script>
+<script src="site_libs/bs3compat-0.3.1/transition.js"></script>
+<script src="site_libs/bs3compat-0.3.1/tabs.js"></script>
+<script src="site_libs/bs3compat-0.3.1/bs3compat.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -284,10 +284,12 @@ $(document).ready(function () {
       </a>
     </div>
 
-    <div id="breadcrumb">
-      <a href="https://ioos.us">IOOS</a> > 
-      <a href="https://noaa-onms.github.io">Sanctuary Watch</a> > 
-      <a href="https://noaa-onms.github.io/cinms">Channel Islands WebCR</a>
+    <div id="breadcrumb" class="navbar-header">
+      <div class="container">
+        <a href="https://ioos.us">IOOS</a> > 
+        <a href="https://noaa-onms.github.io">Sanctuary Watch</a> > 
+        <a href="https://noaa-onms.github.io/cinms">Channel Islands WebCR</a>
+      </div>
     </div>
     
     <div id="headspace">
@@ -402,8 +404,8 @@ and trend data, images, web stories and other supporting content.</p>
 <script>
 $(function() {
   // move header and navbar outside main-container for full width
-  $('.main-container').after($('#footer'));
-  $('.main-container').before($('.navbar'));
+  $('header').prependTo('body')
+  $('#footer').appendTo('body')
 
   // image zoom
   $('img[data-enlargeable]').addClass('img-enlargeable').click(function() {

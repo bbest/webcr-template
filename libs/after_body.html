@@ -48,8 +48,8 @@
 <script>
 $(function() {
   // move header and navbar outside main-container for full width
-  $('.main-container').after($('#footer'));
-  $('.main-container').before($('.navbar'));
+  $('header').prependTo('body')
+  $('#footer').appendTo('body')
 
   // image zoom
   $('img[data-enlargeable]').addClass('img-enlargeable').click(function() {
